@@ -1,19 +1,19 @@
 # Touchline
 
 **A marketing analyst in a box: business question in, analyst-grade SQL,
-deterministic attribution, and a cited interpretation out — or an honest
+deterministic attribution, and a cited interpretation out - or an honest
 refusal when the evidence does not support a claim.**
 
 Every number about credit and lift is computed by deterministic Python
 against a real warehouse. The LLM investigates, explains, and cites; it never
 invents a figure. Same discipline as [BondLens](https://github.com/Lekh007/bondlens-cmbs-surveillance),
-applied to the domain Epsilon's Account Analytics team lives in — where the
+applied to the domain Epsilon's Account Analytics team lives in - where the
 team [already runs AI agents that generate analyst-grade SQL](https://epsilon-publicisgroupe.icims.com/jobs/171303/job)
 and treats evaluation harnesses as part of the job.
 
 ## Status
 
-Wave 0 of 6 — the deterministic core:
+Wave 0 of 6 - the deterministic core:
 
 - Attribution models (last-touch, first-touch, linear, time-decay) with a
   conservation contract: credit assigned sums to revenue converted, asserted

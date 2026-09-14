@@ -1,7 +1,7 @@
 """Deterministic attribution.
 
-Every number Touchline reports about *credit* — which channel drove which
-share of revenue — comes from this module and nowhere else. An LLM may narrate
+Every number Touchline reports about *credit* - which channel drove which
+share of revenue - comes from this module and nowhere else. An LLM may narrate
 these numbers, question them, or refuse to interpret them; it may never
 produce one. That boundary is the same discipline BondLens applies to
 financial facts: the model investigates and explains, Python decides.
@@ -9,7 +9,7 @@ financial facts: the model investigates and explains, Python decides.
 All three models share one contract, and `conservation` is its statement:
 credit assigned across channels sums to the revenue converted, to floating
 point. An attribution model that leaks or invents revenue is worse than
-useless — it looks plausible on a dashboard.
+useless - it looks plausible on a dashboard.
 """
 
 from __future__ import annotations

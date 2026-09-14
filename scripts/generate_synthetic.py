@@ -7,14 +7,14 @@ The planted truth (what makes this an eval corpus and not just fake data):
 each channel has a hidden `quality` multiplier on conversion probability.
 `search` converts best, `social` second, `email` and `display` are weak, and
 `referral` is rare but excellent. An analyst (human or agent) reading the
-output should be able to *discover* these orderings from attribution and RoI —
+output should be able to *discover* these orderings from attribution and RoI -
 which is exactly what the wave-2 eval set grades.
 
 The generator also plants a trap: `display` has high spend and high
 top-of-funnel volume but a poor quality multiplier. A last-touch-only view of
 this warehouse overstates display's contribution on late-stage paths and
 understates search's introduction work. The correct interpretation requires
-comparing models — precisely the analysis the product exists to produce.
+comparing models - precisely the analysis the product exists to produce.
 """
 
 from __future__ import annotations

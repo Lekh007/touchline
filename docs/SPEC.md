@@ -1,15 +1,15 @@
-# Touchline — product specification
+# Touchline - product specification
 
 A marketing analyst in a box: ask a business question in plain language, get
 back analyst-grade SQL against a real warehouse, deterministic attribution and
 incrementality numbers computed by Python (never by a model), and a cited
-plain-language interpretation — or an explicit refusal when the evidence does
+plain-language interpretation - or an explicit refusal when the evidence does
 not support a claim.
 
 ## The one rule
 
 **Deterministic code owns every number. The LLM investigates, explains, and
-cites.** Attribution shares, RoI, lift, confidence intervals — all computed by
+cites.** Attribution shares, RoI, lift, confidence intervals - all computed by
 this repository's own modules against warehouse data. The model's output is
 prose about numbers it was handed, with references to the queries and tables
 that produced them. A claim with no citation is a bug, not a style choice.
@@ -20,7 +20,7 @@ that produced them. A claim with no citation is a bug, not a style choice.
    spreadsheets by hand every Monday.
 2. **The account lead** who needs "what did the spring campaign actually do"
    before a client call, not after a three-day analysis cycle.
-3. **The interviewer** — the product must survive the question "how do you
+3. **The interviewer** - the product must survive the question "how do you
    know the numbers are right?" with an eval suite, not a shrug.
 
 ## Surfaces
@@ -37,7 +37,7 @@ that produced them. A claim with no citation is a bug, not a style choice.
   against trial credits, costed and written up; a local-vs-cloud comparison
   table on the eval set is itself a product finding.
 - **Governance (wave 5):** the agent's tool calls (SQL execution especially)
-  pass through Turnstile — read-only by default, deny on destructive SQL,
+  pass through Turnstile - read-only by default, deny on destructive SQL,
   cost ceilings per tenant. The agent is the first real client of the policy
   gateway this portfolio is built around.
 
@@ -45,7 +45,7 @@ that produced them. A claim with no citation is a bug, not a style choice.
 
 - No dashboards (Metabase later, only if the BI line needs it).
 - No streaming/real-time ingestion.
-- No MMM (media mix modeling) — geo-lift incrementality only; MMM needs more
+- No MMM (media mix modeling) - geo-lift incrementality only; MMM needs more
   data than a synthetic warehouse honestly carries.
 - No multi-tenant anything. This is an analyst's tool.
 
@@ -60,9 +60,9 @@ internal consistency.
 
 ## Deterministic layer contract
 
-`attribution.py`: last-touch, first-touch, linear, time-decay; conservation —
-credit sums to revenue — asserted in tests. `incrementality.py` (wave 2):
+`attribution.py`: last-touch, first-touch, linear, time-decay; conservation -
+credit sums to revenue - asserted in tests. `incrementality.py` (wave 2):
 geo-lift via CausalPy/PyMC with a stated identification assumption, or an
 explicit "not estimable from this data" refusal. `sql.py` (wave 1): the
-agent's only execution path — read-only, allow-listed statement shapes,
+agent's only execution path - read-only, allow-listed statement shapes,
 `TURNSTILE`-governed, per-question cost recorded.
